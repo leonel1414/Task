@@ -62,3 +62,13 @@ await task2;
 await task3;
 sw.Stop();
 Console.WriteLine($"Main:{sw.Elapsed}");
+
+static async Task<String> RandomAsync() {
+    Stopwatch sw = Stopwatch.StartNew();
+    var num = new Random().Next(1000);
+    sw.Stop();
+    var str = ($"{num.ToString()} calculado en: {sw.Elapsed}");
+    Console.WriteLine( str );
+    return str;
+}
+
